@@ -18,10 +18,10 @@ var menuBtn = document.getElementById("menuBtn")
         menuBtn.onclick = function(){
             if(sideNav.style.right == "-250px"){
                 sideNav.style.right = "0";
-                menu.src = "close.png"
+                menu.src = "images/close.png"
             }
             else{
                 sideNav.style.right = "-250px";
-                menu.src = "menu.png"
+                menu.src = "images/menu.png"
             }
         }
