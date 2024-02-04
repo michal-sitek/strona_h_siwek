@@ -8,7 +8,7 @@ body{
     background: #eaeaea;
 }
 #banner{
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/back2.jpeg');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('back2.jpeg');
     background-size: cover;
     background-position: center;
     height: 100vh;
