@@ -14,27 +14,17 @@ body{
     height: 100vh;
 }
 .logo-and-name {
-    padding-top: 10px;
+    /* background: firebrick; */
+    width:30%;
+    padding-top: 0px;
     padding-left: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.fa-home-custom {
-    font-size: 100px !important;
-    color: #ccc;
-    position: flex;
-    top: 4%;
-    left: 10%;
-    transform: rotate(0deg);
-}
-.company-name h2 {
-    margin: 0;
-    margin-left: 10px;
-    line-height: 1.3;
-    text-align: center;
-    color: #ccc;
-    border-bottom: solid 0.5px #ccc;
+.logo-and-name img{
+    width: 100%;
+    height: 100%;
 }
 
 .banner-text{
@@ -108,6 +98,7 @@ nav ul li a {
     color: #000;
     display: block;
     width: 100%;
+    font-size: 1.4vw;
 }
 
 nav ul li:hover {
@@ -132,6 +123,15 @@ nav ul li:hover {
     margin-top: 10px;
     filter: invert(100%);
 }
+
+@media screen and (max-height: 700px) {
+    .banner-text{
+        padding-top: 0px;
+    }
+    
+}
+
+
 @media screen and (max-width: 770px){
     .banner-text{
         padding-top: 150px;
@@ -143,8 +143,29 @@ nav ul li:hover {
         display: block;
         margin: 20px auto;
     }
-    
+    #sideNav{
+        width: 25%;
+    }
+
+    #sideNav nav ul li a{
+        font-size: 1.8vw;
+    }
 }
+
+@media screen and (max-width: 480px) {
+    #sideNav nav ul li{
+        padding: 15px 10px;
+    }
+    #sideNav nav ul li a{
+        font-size: 2.5vw;
+    }
+    .logo-and-name {
+        /* background: firebrick; */
+        width:45%;
+    }    
+}
+
+
 
 /*--service--*/
 .title-text{
@@ -197,7 +218,7 @@ nav ul li:hover {
     margin-bottom: 20px;
     color: #fff;
     position: relative;
-    padding-top: 30%;
+    padding-top: 35%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -242,35 +263,78 @@ hr{
     margin: 15px auto;
     width: 60%;
 }
-.service-desc p{
-    font-size: 16px;
 
+.service-desc h3{
+    font-size: 1.8vw !important;
+
+}
+.service-desc p{
+    font-size: 1.5vw !important;
 }
 .single-service:hover .service-desc{
     /* bottom: 40%; */
     opacity: 1;
     top: 25px;
 }
-@media screen and (min-width: 770px) and (max-width: 900px) {
+
+@media screen and (min-width: 1024px) {
+    .single-service {
+        flex-basis: calc(33.333% - 20px); /* Odejmujemy 20px, aby uwzględnić marginesy */
+    }
     .service-desc h3{
         font-size: 16px;
     }
     .service-desc p{
-        font-size: 1px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 770px) and (max-width: 1023px) {
+    .service-desc h3{
+        font-size: 3vw !important;
+    }
+    .service-desc p{
+        font-size: 2vw !important;
+    }
+    .single-service {
+        padding-top: 50%;
     }
 }
 
 @media screen and (max-width: 770px) {
     .single-service{
-        flex-basis: 100%;
+        flex-basis: 45%;
         margin-bottom: 30px;
-        padding-top: 40%;
+        padding-top: 50%;
+    }
+    .service-desc h3{
+        font-size: 3vw !important;
     }
     .service-desc p{
-        font-size: 16px;
+        font-size: 2vw !important;
     }
     hr{
-        margin: 5px auto;
+        margin: 10px auto;
+    }
+    .single-service:hover .service-desc{
+        bottom: 25% !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .single-service{
+        flex-basis: 100%;
+        margin-bottom: 30px;
+        padding-top: 60%;
+    }
+    .service-desc h3{
+        font-size: 4vw !important;
+    }
+    .service-desc p{
+        font-size: 3vw !important;
+    }
+    hr{
+        margin: 10px auto;
     }
     .single-service:hover .service-desc{
         bottom: 25% !important;
@@ -281,21 +345,23 @@ hr{
 
 #slider{
     width: 100%;
-    padding: 70px 0;
+    padding-bottom: 20px;
     background: #efefef;
 }
 .container{
     position: relative;
     margin: auto;
-    width: 1000px;
+    width: 430px;
     height: 600px;
     background: #f5f5f5;
     box-shadow: 0 30px 50px #dbdbdb;
+    max-width: 1000px;
+    max-height: 600px;
 }
 
 .container .slide .item{
-    width: 200px;
-    height: 300px;
+    width: 30%;
+    height: 40%;
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
@@ -307,7 +373,9 @@ hr{
     transition: 0.5s;
 }
 
-.slide .item:nth-child(1),
+.slide .item:nth-child(1){
+    left: calc(-35%);
+}
 .slide .item:nth-child(2){
     top: 0;
     left: 0;
@@ -319,10 +387,10 @@ hr{
 
 
 .slide .item:nth-child(3){
-    left: calc(50% + 220px);
+    left: calc(50% + 40%);
 }
 .slide .item:nth-child(4){
-    left: calc(50% + 440px);
+    left: calc(50% + 75%);
 }
 .slide .item:nth-child(5){
     display: none;
@@ -381,63 +449,45 @@ hr{
     color: #fff;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .container {
-        padding: 10px;
-    }
-
-    .slide .item {
-        width: calc(50% - 20px);
-    }
-
-    .slide .item .content {
-        padding: 15px;
-    }
-
-    .content .name,
-    .content .des {
-        white-space: normal;
+        width: 80%;
+        height: 60%;
     }
 }
 
 @media (max-width: 768px) {
-    .slide .item {
-        width: calc(100% - 20px);
-    }
 
-    .item .content {
-        padding: 10px;
-    }
-
-    .content .name {
-        font-size: 20px;
-    }
-
-    .content .des {
-        font-size: 14px;
+    .container{
+        width: 80%;
+        height: 40%;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 5px;
+        width: 80%;
+        height: 30%;
     }
 
-    .slide .item {
-        width: calc(100% - 10px);
+    .slide .item:nth-child(1){
+        display: none;
+    }
+    
+    .slide .item:nth-child(3){
+        display: none;
+    }
+    .slide .item:nth-child(4){
+        display: none;
+    }
+    .slide .item:nth-child(5){
+        display: none;
+    }
+    
+    .slide .item:nth-child(n + 6){
+        display: none;
     }
 
-    .item .content {
-        padding: 5px;
-    }
-
-    .content .name {
-        font-size: 18px;
-    }
-
-    .content .des {
-        font-size: 12px;
-    }
 }
 
 
